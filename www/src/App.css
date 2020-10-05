@@ -203,4 +203,13 @@
   text-decoration: underline;
   font-style: italic;
 }
-
+.removecart .btn{
+  background: grey;
+  color: white;
+  padding: 5px;
+  width: 70px;
+  height: 37px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}

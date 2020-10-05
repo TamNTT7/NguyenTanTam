@@ -1,6 +1,5 @@
 import * as types from "../constants/actionType"
 
-
 const initialState = {
     items: [],
   };
@@ -12,8 +11,14 @@ export const CartReducer = (state=initialState,action)=>{
             newState.items[`${action.payload.id}_${action.payload.ten}`] =
             action.payload;
         return newState;
+        case types.CART_REMOVE_ITEM:
+            console.log(action.payload);
+            newState = { ...state };
+            delete newState.items[action.payload];
+            return newState;
         
         default:
             return{...state};
     }
 }
+

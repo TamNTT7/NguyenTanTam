@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link, BrowserRouter as Router,} from "react-router-dom";
 import Product from '../product/product'
+import {removeCart} from "../../redux/action/productAtions"
 
 
 class cart extends Component {
@@ -22,7 +23,7 @@ class cart extends Component {
                                 </button>1
                                 <button onClick={() => this.props.tanggiam(true, values.id)}> +</button></td>
                                 <td>{this.formart_curency(values.gia)}</td>
-                                <td><button className="delete">Delete</button></td>
+                                <td><div className="removecart"><i onClick={() => {this.props.removeCart(`${values.id}_${values.ten}`)}} className="btn btn-success" >Delete</i></div></td>
                             </tr>
                         ) 
                     })}
@@ -35,5 +36,13 @@ function mapStateToProps(state) {
     const { cartReducer } = state
     return { cart: cartReducer.items }
 }
+
+const mapDispacthToProps = dispatch =>{
+    return{
+        removeCart: sanPham => {
+            dispatch(removeCart(sanPham));
+        },
+    }
+}
   
-  export default connect(mapStateToProps, null)(cart);
+  export default connect(mapStateToProps,mapDispacthToProps)(cart);
