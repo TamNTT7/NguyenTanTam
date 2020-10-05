@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link, BrowserRouter as Router,} from "react-router-dom";
-import {addCart} from "../../redux/action/product"
+import {addCart} from "../../redux/action/productAtions"
 
 class product extends Component {
 
@@ -34,7 +34,6 @@ class product extends Component {
                     <Link className="anh" to={`/Detail/${this.props.detail.id}` +"/"+ `${this.to_slug(this.props.ten)}`} params={{detail:this.props.detail}}><img src={this.props.detail.image} width="225px" height="200px" /></Link><br />
                     <Link className="ten" to={`/Detail/${this.props.detail.id}` +"/"+ `${this.to_slug(this.props.ten)}`} params={{detail:this.props.detail}}>{this.props.ten}</Link>  
                     <div>{this.props.gia}</div>  
-                    
                     <Link className="btn btn-success" to={`/Detail/${this.props.detail.id}` +"/"+ `${this.to_slug(this.props.ten)}`}params={{detail:this.props.detail}}>Detail</Link>
                     <div className="addcart"><i  onClick={() => this.props.addCart(this.props.detail)} className="btn btn-success">ADD CART</i></div>
                 </div>
@@ -48,7 +47,8 @@ const mapDispacthToProps = dispatch =>{
     return{
         addCart: sanPham => {
             dispatch(addCart(sanPham));
-        } 
+        },
     }
 }
+
 export default connect(null, mapDispacthToProps)(product);

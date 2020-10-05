@@ -4,6 +4,7 @@ import CartIcon from '../svg/carticon.svg'
 
 
 class menu extends Component {
+
     render() {
         
         return (
@@ -20,7 +21,7 @@ class menu extends Component {
                 </div>
                 <div className="cart">
                     <Link to="/Cart">
-                        <span>0</span>
+                        
                         <img src={CartIcon} alt="" width="20px"/>
                     </Link>
                 </div>
