@@ -193,9 +193,10 @@
 }
 .ListCart{
   width: 1000px;
-  height: 1000px;
+  height: auto;
   border: 2px solid grey;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 .ListCart h1{
   font-size: 40px;
