@@ -18,22 +18,22 @@ class cart extends Component {
             <div className="ListCart">
                 <h1>Product List</h1>
                 <div className="listpro">
-                    {Object.values(this.props.cart).map((values,index)=>{
-                        return(
-                            <section className="section">
-                                <div className="table-reponsive">
-                                    <table className="table product-table">
-                                        <thead>
-                                            <tr>
-                                                <th>Product Name</th>
-                                                <th>Image</th>
-                                                <th>Amount</th>
-                                                <th>Price</th>   
-                                                <th>Delete</th>                                         
-                                                <th>Total</th>
+                    <section className="section">
+                        <div className="table-reponsive">
+                            <table className="table product-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Image</th>
+                                        <th>Amount</th>
+                                        <th>Price</th>   
+                                        <th>Delete</th>                                         
+                                        <th>Total</th>
                                                 
-                                            </tr>
-                                        </thead>
+                                    </tr>
+                                </thead>
+                                {Object.values(this.props.cart).map((values,index)=>{
+                                    return(
                                         <tbody>
                                             <tr key={index}>
                                             <td>{values.ten}</td>
@@ -55,14 +55,11 @@ class cart extends Component {
                                                     updateCart(`${values.id}_${values.ten}`)}} 
                                                     className="btn btn-success" >X</i></div></td>
                                             </tr>
-                                             
                                         </tbody>
-                                    </table>
-                                </div>
-                            </section>
-                        
-                        ) 
-                    })}
+                                        )})}
+                            </table>
+                        </div>
+                    </section>          
                 </div>
             </div>
         );
