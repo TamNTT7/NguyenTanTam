@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {Link, BrowserRouter as Router,} from "react-router-dom";
 import Product from '../product/product'
 import {removeCart} from "../../redux/action/productAtions"
+import {updateCart} from "../../redux/action/productAtions"
 
 
 class cart extends Component {
@@ -49,7 +50,10 @@ class cart extends Component {
                                                 </div>
                                             </td>
                                             <td>{this.formart_curency(values.gia, values.soLuong)}</td>
-                                            <td><div className="removecart"><i onClick={() => {this.props.removeCart(`${values.id}_${values.ten}`)}} className="btn btn-success" >X</i></div></td>
+                                            <td><div className="removecart"><i onClick={() => {
+                                                    this.props.removeCart(`${values.id}_${values.ten}`);
+                                                    updateCart(`${values.id}_${values.ten}`)}} 
+                                                    className="btn btn-success" >X</i></div></td>
                                             </tr>
                                              
                                         </tbody>

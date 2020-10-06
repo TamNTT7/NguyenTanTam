@@ -9,10 +9,6 @@ import {createStoreHook, Provider} from 'react-redux';
 import {Store} from "./redux/reducer/index"
 
 
-const store = createStore(
-  
-  window.__REDUX_DEVTOOLS_EXTENSION__&& window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 ReactDOM.render(
   <Provider store={Store()}>
   <BrowserRouter>

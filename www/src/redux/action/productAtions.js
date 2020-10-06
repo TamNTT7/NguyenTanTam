@@ -14,5 +14,12 @@ export const removeCart = (sanPham, soLuong)=>{
     }
 }
 
+export const updateCart = (sanPham, soLuong)=>{
+    return{
+        type: types.CART_UPDATE_ITEM,
+        payload: sanPham,soLuong
+    }
+}
+
 
 
